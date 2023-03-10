@@ -1,0 +1,15 @@
+.config/i3/config
+.config/kitty/kitty.conf
+.config/nvim/init.lua
+.config/nvim/lua/packer_init.lua
+.config/nvim/lua/core/autocmds.lua
+.config/nvim/lua/core/colors.lua
+.config/nvim/lua/core/keymaps.lua
+.config/nvim/lua/core/options.lua
+.config/nvim/lua/core/statusline.lua
+.config/nvim/lua/lsp/lspconfig.lua
+.config/nvim/lua/plugins/alpha-nvim.lua
+.config/nvim/lua/plugins/indent-blankline.lua
+.config/nvim/lua/plugins/nvim-cmp.lua
+.config/nvim/lua/plugins/nvim-tree.lua
+.config/nvim/lua/plugins/nvim-treesitter.lua
