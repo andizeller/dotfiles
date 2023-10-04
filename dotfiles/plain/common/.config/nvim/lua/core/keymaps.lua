@@ -38,10 +38,10 @@ map('n', '<leader>tk', '<C-w>t<C-w>K') -- change vertical to horizontal
 map('n', '<leader>th', '<C-w>t<C-w>H') -- change horizontal to vertical
 
 -- Move around splits using Ctrl + {h,j,k,l}
-map('n', '<C-h>', '<C-w>h')
-map('n', '<C-j>', '<C-w>j')
-map('n', '<C-k>', '<C-w>k')
-map('n', '<C-l>', '<C-w>l')
+map('n', '<c-h>', '<C-w>h')
+map('n', '<c-j>', '<C-w>j')
+map('n', '<c-k>', '<C-w>k')
+map('n', '<c-l>', '<C-w>l')
 
 -- Reload configuration without restart nvim
 map('n', '<leader>r', ':so %<CR>')
@@ -57,11 +57,11 @@ map('n', '<leader>q', ':qa!<CR>')
 -----------------------------------------------------------
 
 -- Terminal mappings
-map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
+map('n', '<c-t>', ':Term<CR>', { noremap = true })  -- open
 map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
 
 -- NvimTree
-map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
+map('n', '<c-n>', ':NvimTreeToggle<CR>')            -- open/close
 map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
 map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 
@@ -70,3 +70,18 @@ map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
 
 -- Switch between header and cpp file
 map('n', 'gh', ':e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>')
+
+-- Telescope
+--local builtin = require('telescope.builtin')
+map('n', '<leader>ff', ':Telescope find_files<CR>', {})
+map('n', '<leader>fg', ':Telescope live_grep<CR>', {})
+map('n', '<leader>fu', ':Telescope grep_string<CR>', {})
+map('n', '<leader>fb', ':Telescope buffers<CR>', {})
+map('n', '<leader>fh', ':Telescope help_tags<CR>', {})
+
+-- Compiler Explorer
+map('n', '<leader>cc', ':CECompile compiler=g379 flags=-O3 flags=-Wall<CR>')
+
+-- Lazygit
+map('n', '<leader>gg', ':LazyGit<CR>')
+

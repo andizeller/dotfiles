@@ -50,6 +50,15 @@ opt.synmaxcol = 240         -- Max column for syntax highlight
 opt.updatetime = 250        -- ms to wait for trigger an event
 
 -----------------------------------------------------------
+-- Code formatting
+-----------------------------------------------------------
+g.formatdef_astyle_cpp = '"astyle --mode=c -A1OSKCSNM80fpDUjcwk1xWm0"'
+g.formatters_cpp = {'astyle_cpp'}
+g.autoformat_autoindent = 0
+g.autoformat_retab = 0
+g.autoformat_remove_trailing_spaces = 0
+
+-----------------------------------------------------------
 -- Startup
 -----------------------------------------------------------
 -- Disable nvim intro

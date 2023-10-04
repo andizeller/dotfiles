@@ -32,6 +32,12 @@ autocmd('BufEnter', {
   command = 'set fo-=c fo-=r fo-=o'
 })
 
+-- Format on save
+autocmd('BufWrite', {
+  pattern = '',
+  command = 'Autoformat'
+})
+
 -- Settings for filetypes:
 --------------------------
 
@@ -76,3 +82,4 @@ autocmd('BufLeave', {
   pattern = 'term://*',
   command = 'stopinsert'
 })
+

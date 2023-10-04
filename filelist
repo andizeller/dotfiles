@@ -1,4 +1,5 @@
 .config/i3/config
+.config/i3/i3status-rs.toml
 .config/kitty/kitty.conf
 .config/nvim/init.lua
 .config/nvim/lua/packer_init.lua

@@ -112,6 +112,45 @@ return packer.startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons' },
   }
 
+  -- Compiler explorer
+  use {'krady21/compiler-explorer.nvim'}
+
+
+  -- Telescope (fuzzy finder)
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.x',
+    requires = {'nvim-lua/plenary.nvim'}
+  }
+
+  -- Ranger
+  use {
+    'francoiscabrol/ranger.vim',
+    requires = {'rbgrouleff/bclose.vim'}
+  }
+
+  -- Bookmarks
+  use {
+    'MattesGroeger/vim-bookmarks'
+  }
+
+  -- Autoformat (e.g. Astyle)
+  use {
+    'vim-autoformat/vim-autoformat'
+  }
+
+  -- GIT
+  use {
+    'tpope/vim-fugitive',
+    'airblade/vim-gitgutter',
+    'kdheepak/lazygit.nvim'
+  }
+
+  -- Copilot
+  use {
+    'github/copilot.vim'
+  }
+
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

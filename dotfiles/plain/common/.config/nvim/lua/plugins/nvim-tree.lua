@@ -35,7 +35,7 @@ nvim_tree.setup {
     centralize_selection = false,
     cursorline = true,
     debounce_delay = 15,
-    width = 34,
+    width = 50,
     hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
@@ -131,7 +131,6 @@ nvim_tree.setup {
     update_root = true,
     ignore_list = {},
   },
-  ignore_ft_on_setup = {},
   system_open = {
     cmd = "",
     args = {},
@@ -153,7 +152,7 @@ nvim_tree.setup {
     },
   },
   filters = {
-    dotfiles = false,
+    dotfiles = true,
     git_clean = false,
     no_buffer = false,
     custom = {},
