@@ -33,10 +33,10 @@ autocmd('BufEnter', {
 })
 
 -- Format on save
-autocmd('BufWrite', {
-  pattern = '',
-  command = 'Autoformat'
-})
+--autocmd('BufWrite', {
+--  pattern = '',
+--  command = 'Autoformat'
+--})
 
 -- Settings for filetypes:
 --------------------------

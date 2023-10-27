@@ -140,6 +140,7 @@ lspconfig.clangd.setup {
   on_attach = on_attach,
   root_dir = root_dir,
   capabilities = capabilities,
+  offsetEncodings = {'utf-8', 'utf-16'},
   flags = {
     -- default in neovim 0.7+
     debounce_text_changes = 150,
