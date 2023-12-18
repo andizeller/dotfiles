@@ -166,3 +166,7 @@ exec ~/Development/tractor_scripts/run_init_scripts.sh
 
 # For transparency
 exec xcompmgr -c -f -n
+
+# Scratchpads
+bindsym $mod+g exec --no-startup-id "$HOME/.config/i3/i3-scratchpad -t -acc -d1800x1200 kitty ranger"
+bindsym $mod+t exec --no-startup-id "$HOME/.config/i3/i3-scratchpad -t -acc -d1800x1200 kitty"
