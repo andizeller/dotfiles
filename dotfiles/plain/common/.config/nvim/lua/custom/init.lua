@@ -1,26 +1,56 @@
-local g = vim.g
+require("custom.globals")
 
-local autocmd = vim.api.nvim_create_autocmd
+local options = {
+	guicursor = "", -- disable cursor styling
+	cursorline = false, -- disable cursor styling
+	completeopt = { "menuone", "noselect" }, -- options for insert mode completion (for cmp plugin)
+	conceallevel = 0, -- so that `` is visible in markdown files
+	cmdheight = 2, -- number of of screen lines to use for the command line
+	relativenumber = true, -- relative numbers from line cursor is on
+	swapfile = false,
+	hlsearch = true, -- highlight all matches of previous search pattern
+	incsearch = true, -- highlight matches of current search pattern as it is typed
+	scrolloff = 8, -- minimal number of screen lines to keep above and below the cursor.
+	-- smarttab = true,
+	tabstop = 2, -- number of spaces to insert for a tab
+	shiftwidth = 2, -- number of spaces inserted for each indentation
+	undofile = true, -- keep undo history between sessions
+	backup = false, -- Some servers have issues with backup files, see #649.
+	writebackup = false,
+}
 
--- Auto resize panes when resizing nvim window
--- autocmd("VimResized", {
---   pattern = "*",
---   command = "tabdo wincmd =",
--- })
+for key, value in pairs(options) do
+	vim.opt[key] = value
+end
 
--- Remove whitespace on save
-autocmd('BufWritePre', {
-  pattern = '',
-  command = ":%s/\\s\\+$//e"
-})
+vim.opt.shortmess:append("c") -- hide startup message
 
--- Don't auto commenting new lines
-autocmd('BufEnter', {
-  pattern = '',
-  command = 'set fo-=c fo-=r fo-=o'
-})
+-- highlight yank
+vim.cmd([[
+augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 80})
+augroup END
+]])
 
-vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = { "*.cpp", "*.h" },
-  command = [[ silent! ! /usr/bin/astyle  -A1OSKCSNM80fpDUjcwk1xWm0 --options=none --suffix=none % ]],
-})
+-- wrap git commit body message lines at 72 characters
+vim.cmd([["
+    augroup gitsetup
+        autocmd!
+        autocmd FileType gitcommit
+                \ autocmd CursorMoved,CursorMovedI * 
+                        \ let &l:textwidth = line('.') == 1 ? 50 : 72
+augroup end
+"]])
+
+local enable_providers = {
+	"python3_provider",
+	-- and so on
+}
+
+for _, plugin in pairs(enable_providers) do
+	vim.g["loaded_" .. plugin] = nil
+	vim.cmd("runtime " .. plugin)
+end
+
+vim.g.python3_host_prog = "/bin/python3"
