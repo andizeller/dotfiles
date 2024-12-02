@@ -159,7 +159,7 @@ for_window [class="application"] floating enable
 for_window [class="Cerebro"] floating enable
 
 
-exec --no-startup-id feh --bg-fill ~/Bilder/homeworld_desktop.png
+exec --no-startup-id feh --bg-fill ~/.config/backgrounds/astronaut_jellyfish.jpg
 
 # Run init scripts to configure environment
 exec ~/Development/tractor_scripts/run_init_scripts.sh
