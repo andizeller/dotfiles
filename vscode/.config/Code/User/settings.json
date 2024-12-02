@@ -1,0 +1,51 @@
+{
+    "workbench.colorTheme": "Night Owl",
+    "vim.vimrc.enable": true,
+    "workbench.tree.indent": 20,
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "vim.vimrc.path": "$HOME/.config/nvim/init.lua",
+    "cmake.showOptionsMovedNotification": false,
+    "git.confirmSync": false,
+    "git.ignoreRebaseWarning": true,
+    "editor.defaultFormatter": "emeraldwalk.RunOnSave",
+    "C_Cpp.formatting": "disabled",
+    "vim.handleKeys": {
+        "<C-p>": false,
+        "<C-w>": false
+    },
+    "github-enterprise.uri": "https://github.com/AGCO-EFG/efg_infrastructure_cea_terminals",
+    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+    "C_Cpp.default.compileCommands": "/home/nt0x/Development/efg_infrastructure_cea_terminals/.build/compile_commands.json",
+    "keyboard.dispatch": "keyCode",
+    "vim.foldfix": true,
+    "terminal.integrated.scrollback": 100000,
+    "workbench.startupEditor": "none",
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "vim.useCtrlKeys": false,
+    "vim.scroll": 10,
+    "qt-core.qtInstallationRoot": "/home/nt0x/Qt",
+    "git.openRepositoryInParentFolders": "never",
+    "emeraldwalk.runonsave": {
+        "autoClearConsole": true,
+        "shell": "bash",
+        "commands": [
+            {
+                // Run whenever any file is saved
+                "match": ".*",
+                "cmd": "./formatFiles.sh -f ${file}"
+            },
+            {
+                // Run whenever any file is saved
+                "match": ".*",
+                "cmd": "echo '${cwd}/${file}' saved."
+            }
+        ]
+    },
+    "jenkins.pipeline.linter.connector.token": "119fc2c3f643b5054f3102fe6b74c80c4e",
+    "jenkins.pipeline.linter.connector.url": "https://cloudbees.agcocorp.com/efg-terminals/pipeline-model-converter/validate",
+    "jenkins.pipeline.linter.connector.user": "zellandr",
+}

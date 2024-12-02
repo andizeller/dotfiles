@@ -1,0 +1,33 @@
+{
+    "windsurf.autocompleteSpeed": "fast",
+    "keyboard.dispatch": "keyCode",
+    "editor.defaultFormatter": "emeraldwalk.RunOnSave",
+    "emeraldwalk.runonsave": {
+        "autoClearConsole": true,
+        "shell": "bash",
+        "commands": [
+            {
+                // Run whenever any file is saved
+                "match": ".*",
+                "cmd": "./formatFiles.sh -f ${file}"
+            },
+            {
+                // Run whenever any file is saved
+                "match": ".*",
+                "cmd": "echo '${cwd}/${file}' saved."
+            }
+        ]
+    },
+    "jenkins.pipeline.linter.connector.token": "119fc2c3f643b5054f3102fe6b74c80c4e",
+    "jenkins.pipeline.linter.connector.url": "https://cloudbees.agcocorp.com/efg-terminals/pipeline-model-converter/validate",
+    "jenkins.pipeline.linter.connector.user": "zellandr",
+    "vim.enableNeovim": true,
+    "vim.neovimUseConfigFile": true,
+    "vim.neovimConfigPath": "~/.config/nvim/init.lua",
+    "vim.useCtrlKeys": false,
+    "vim.scroll": 10,
+    "vim.foldfix": true,
+    "windsurf.enableConfig": {
+        "*": true
+    },
+}
