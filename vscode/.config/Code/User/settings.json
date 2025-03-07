@@ -48,4 +48,27 @@
     "jenkins.pipeline.linter.connector.token": "119fc2c3f643b5054f3102fe6b74c80c4e",
     "jenkins.pipeline.linter.connector.url": "https://cloudbees.agcocorp.com/efg-terminals/pipeline-model-converter/validate",
     "jenkins.pipeline.linter.connector.user": "zellandr",
-}
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [">"],
+            "commands": [
+            "editor.action.indentLines",
+            "vim.remap",
+            "gv"
+            ]
+        }
+    ],   
+    "[ansible]": {
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+        "editor.formatOnSave": true
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "chat.editing.alwaysSaveWithGeneratedChanges": true,
+    "cmake.buildDirectory": "${workspaceFolder}/.build",
+    "cmake.deleteBuildDirOnCleanConfigure": true,
+    "cmake.automaticReconfigure": false,
+    "C_Cpp.default.intelliSenseMode": "gcc-x86",
+    "cmake.configureOnEdit": false,
+    "cmake.configureOnOpen": false,
+    }

@@ -22,3 +22,9 @@ end
 --   on_init = nvlsp.on_init,
 --   capabilities = nvlsp.capabilities,
 -- }
+
+lspconfig.clangd.setup {
+  on_attach = nvlsp.on_attach,
+  capabilities = nvlsp.capabilities,
+  cmd = { "clangd", "--clang-tidy", "--clang-tidy-checks=*", "--background-index", "--header-insertion=never" },
+}

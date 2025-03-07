@@ -71,7 +71,7 @@ ZSH_THEME="jonathan"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions ztrace)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,7 +110,29 @@ alias js="cd ~/Development/efg_terminals_shared_resources"
 alias astyle_diff="git diff --cached --name-only -- '*.h'  '*.cpp' | xargs astyle -A1OSKCSNM80fpDUjcwk1xWm0"
 alias nvim-kickstart='NVIM_APPNAME="nvim_kickstart" nvim'
 alias nvim-o='NVIM_APPNAME="nvim_omerxx" nvim'
+alias fnvim='nvim $(fzf)'
 
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
+
+# Set vim mode
+#set -o vi
+
+#bindkey -M viins '^F' end-of-line
+#bindkey -M viins '^[l' forward-word
+#bindkey -M viins '^[h' backward-kill-word
+
+# Function to open file search with fzf and open in nvim
+fzf_nvim() {
+  fd --type f --hidden --exclude .git | fzf | xargs nvim
+}
+zle -N fzf_nvim
+bindkey -M viins '^[f' fzf_nvim
+
+
+export EDITOR=nvim
+export VISUAL=nvim
+
+export XDG_CONFIG_HOME=~/.config
+source ~/.zsh-copilot/zsh-copilot.plugin.zsh
