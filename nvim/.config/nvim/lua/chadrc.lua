@@ -2,11 +2,11 @@
 -- https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
 -- Please read that file to know all available options :( 
 
----@type ChadrcConfig
+---@class ChadrcConfig
 local M = {}
 
 M.base46 = {
-	theme = "onedark",
+	theme = "chadracula-evondev",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
@@ -20,5 +20,20 @@ M.base46 = {
 --          lazyload = false
 --      }
 --}
+
+-- Function to toggle between header and cpp file
+M.switch_header_cpp = function()
+    local file = vim.fn.expand("%")
+    if file:match("%.h$") then
+        vim.cmd("edit " .. file:gsub("%.h$", ".cpp"))
+    elseif file:match("%.cpp$") then
+        vim.cmd("edit " .. file:gsub("%.cpp$", ".h"))
+    else
+        print("Not a .h or .cpp file!")
+    end
+end
+
+-- Keybinding
+vim.api.nvim_set_keymap("n", "gh", ":lua require('chadrc').switch_header_cpp()<CR>", { noremap = true, silent = true })
 
 return M
