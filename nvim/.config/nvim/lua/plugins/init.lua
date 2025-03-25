@@ -85,4 +85,27 @@ return {
   {"hrsh7th/cmp-buffer"},
   {"hrsh7th/cmp-path"},
   {"hrsh7th/cmp-cmdline"},
+  {
+    "RRethy/vim-illuminate",
+    event = {"BufRead", "BufWinEnter"},
+    config = function()
+       require("illuminate").configure({
+                -- Example configuration options (you can adjust as needed)
+                delay = 100,
+                filetypes_denylist = { "NvimTree", "packer" },
+                providers = { "lsp", "treesitter", "regex" },
+                under_cursor = true,
+            })
+    end,
+  },
+  {
+      "Civitasv/cmake-tools.nvim",
+      ft = {"cpp", "c", "cmake"},
+      opts = {
+          cmake_command = "cmake", -- Path to CMake command
+          cmake_build_directory = "build", -- Build directory
+          cmake_generate_options = { "-DCMAKE_EXPORT_COMPILE_COMMANDS=1" },
+          cmake_build_options = {"-j24"},
+      },
+  },
 }
