@@ -1,6 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$PATH:$HOME/.local/bin:/usr/sbin:$HOME/.pyenv/bin
 
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -111,6 +115,7 @@ alias astyle_diff="git diff --cached --name-only -- '*.h'  '*.cpp' | xargs astyl
 alias nvim-kickstart='NVIM_APPNAME="nvim_kickstart" nvim'
 alias nvim-o='NVIM_APPNAME="nvim_omerxx" nvim'
 alias fnvim='nvim $(fzf)'
+alias n='j && nvim ~/home/Development/efg_infrastructure_cea_terminals'
 
 . "$HOME/.atuin/bin/env"
 
