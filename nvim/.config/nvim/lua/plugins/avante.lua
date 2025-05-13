@@ -1,6 +1,7 @@
 return {
   {
-  "yetone/avante.nvim",
+  "yetone/avante.nvim", 
+  enabled = false,
   event = "VeryLazy",
   version = false, -- Never set this value to "*"! Never!
   enabled = false,
@@ -87,8 +88,8 @@ return {
         apply_cursor = "a",
         retry_user_request = "r",
         edit_user_request = "e",
-        switch_windows = "<Tab>",
-        reverse_switch_windows = "<S-Tab>",
+        -- switch_windows = "<Tab>",
+        -- reverse_switch_windows = "<S-Tab>",
         remove_file = "d",
         add_file = "@",
         close = { "<Esc>", "q" },
