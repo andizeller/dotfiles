@@ -20,3 +20,10 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 })
 
 
+vim.keymap.set('n', '<leader>fs', function()
+  require('telescope.builtin').lsp_workspace_symbols({ query = vim.fn.expand('<cword>') })
+end, { noremap = true, silent = true })
+
+vim.keymap.set('n', '<leader>fd', function()
+  require('telescope.builtin').live_grep({ default_text = vim.fn.expand('<cword>') })
+end, { noremap = true, silent = true })
