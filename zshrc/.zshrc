@@ -115,7 +115,9 @@ alias astyle_diff="git diff --cached --name-only -- '*.h'  '*.cpp' | xargs astyl
 alias nvim-kickstart='NVIM_APPNAME="nvim_kickstart" nvim'
 alias nvim-o='NVIM_APPNAME="nvim_omerxx" nvim'
 alias fnvim='nvim $(fzf)'
-alias n='j && nvim ~/home/Development/efg_infrastructure_cea_terminals'
+alias n='nvim'
+alias b='./.app.sh'
+alias rg='rg -S'
 
 . "$HOME/.atuin/bin/env"
 
@@ -141,3 +143,5 @@ export VISUAL=nvim
 
 export XDG_CONFIG_HOME=~/.config
 source ~/.zsh-copilot/zsh-copilot.plugin.zsh
+
+source ~/scripts/.env
