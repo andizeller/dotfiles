@@ -7,12 +7,19 @@ local lspconfig = require "lspconfig"
 local servers = { "html", "cssls" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
+-- Set consistent offset encoding
+local capabilities = vim.tbl_deep_extend(
+  "force", 
+  nvlsp.capabilities or {}, 
+  { offsetEncoding = { "utf-16" } }
+)
+
 -- lsps with default config
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = nvlsp.on_attach,
     on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
+    capabilities = capabilities,
   }
 end
 
@@ -20,11 +27,12 @@ end
 -- lspconfig.ts_ls.setup {
 --   on_attach = nvlsp.on_attach,
 --   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
+--   capabilities = capabilities,
 -- }
 
 lspconfig.clangd.setup {
   on_attach = nvlsp.on_attach,
-  capabilities = nvlsp.capabilities,
+  capabilities = capabilities,
   cmd = { "clangd", "--clang-tidy", "--clang-tidy-checks=*", "--background-index", "--header-insertion=never" },
+  offsetEncoding = "utf-16",
 }
