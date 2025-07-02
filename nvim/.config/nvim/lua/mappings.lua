@@ -20,10 +20,27 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 })
 
 
-vim.keymap.set('n', '<leader>fs', function()
+-- Telescope additional keymabs
+map('n', '<leader>fs', function()
   require('telescope.builtin').lsp_workspace_symbols({ query = vim.fn.expand('<cword>') })
 end, { noremap = true, silent = true })
 
-vim.keymap.set('n', '<leader>fd', function()
+map('n', '<leader>fd', function()
   require('telescope.builtin').live_grep({ default_text = vim.fn.expand('<cword>') })
 end, { noremap = true, silent = true })
+
+-- Safe require to avoid errors if gitsigns isn't loaded yet
+local ok, gs = pcall(require, "gitsigns")
+if ok then
+  map("n", "]c", function()
+    if vim.wo.diff then return "]c" end
+    vim.schedule(function() gs.next_hunk() end)
+    return "<Ignore>"
+  end, { expr = true, desc = "Next Git Hunk" })
+
+  map("n", "[c", function()
+    if vim.wo.diff then return "[c" end
+    vim.schedule(function() gs.prev_hunk() end)
+    return "<Ignore>"
+  end, { expr = true, desc = "Previous Git Hunk" })
+end
