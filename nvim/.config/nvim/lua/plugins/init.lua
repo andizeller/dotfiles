@@ -14,25 +14,29 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-      run = ":TSUpdate",
-      config = function()
-        require("nvim-treesitter.configs").setup {
-          ensure_installed = { "cpp", "yaml" },
-          highlight = { enable = true },
-        }
-      end,
+    run = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter.configs").setup {
+        ensure_installed = { "cpp", "yaml" },
+        highlight = { enable = true },
+      }
+    end,
   },
   {
     "RRethy/vim-illuminate",
     event = {"BufRead", "BufWinEnter"},
     config = function()
-       require("illuminate").configure({
-                -- Example configuration options (you can adjust as needed)
-                delay = 100,
-                filetypes_denylist = { "NvimTree", "packer" },
-                providers = { "lsp", "treesitter", "regex" },
-                under_cursor = true,
-            })
+      require("illuminate").configure({
+        -- Example configuration options (you can adjust as needed)
+        delay = 100,
+        filetypes_denylist = { "NvimTree", "packer" },
+        providers = { "lsp", "treesitter", "regex" },
+        under_cursor = true,
+      })
     end,
+  },
+  {
+    "onsails/lspkind-nvim",
+    lazy = true,
   },
 }
