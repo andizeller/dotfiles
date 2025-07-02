@@ -44,3 +44,10 @@ if ok then
     return "<Ignore>"
   end, { expr = true, desc = "Previous Git Hunk" })
 end
+
+-- Bookmarks
+-- mm – Toggle bookmark on the current line.
+-- mi – Annotate a bookmark.
+-- mc – Clear bookmarks in the current buffer.
+-- ma – Clear all bookmarks.
+vim.api.nvim_set_keymap("n", "<leader>bm", ":Telescope vim_bookmarks all<CR>", { noremap = true, silent = true })
