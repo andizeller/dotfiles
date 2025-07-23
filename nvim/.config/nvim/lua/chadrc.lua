@@ -21,6 +21,10 @@ M.base46 = {
 --      }
 --}
 
+M.colorify = {
+  enabled = false,
+}
+
 -- Function to toggle between header and cpp file
 M.switch_header_cpp = function()
     local file = vim.fn.expand("%")
