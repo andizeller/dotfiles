@@ -116,6 +116,7 @@ alias nvim-kickstart='NVIM_APPNAME="nvim_kickstart" nvim'
 alias nvim-o='NVIM_APPNAME="nvim_omerxx" nvim'
 alias fnvim='nvim $(fzf)'
 alias n='nvim'
+alias a='SHADOW_BUILD=.build ./fendttrc.sh'
 alias b='./.app.sh'
 alias rg='rg -S'
 
@@ -145,3 +146,4 @@ export XDG_CONFIG_HOME=~/.config
 source ~/.zsh-copilot/zsh-copilot.plugin.zsh
 
 source ~/scripts/.env
+export NODE_EXTRA_CA_CERTS=/usr/local/share/ca-certificates/trusted-CA.crt

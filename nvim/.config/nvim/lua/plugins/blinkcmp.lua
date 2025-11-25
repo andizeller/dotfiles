@@ -2,6 +2,7 @@ return {
   {"giuxtaposition/blink-cmp-copilot"},
   {
     'saghen/blink.cmp',
+    enabled=false,
     event = "VeryLazy",
     -- optional: provides snippets for the snippet source
     dependencies = { 'rafamadriz/friendly-snippets' },
@@ -28,7 +29,7 @@ return {
       -- C-k: Toggle signature help (if signature.enabled = true)
       --
       -- See :h blink-cmp-config-keymap for defining your own keymap
-      keymap = { preset = 'enter' },
+      keymap = { preset = 'super-tab' },
 
       appearance = {
         -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -40,15 +41,7 @@ return {
       completion = { documentation = { auto_show = true } },
 
       sources = {
-        default = { 'copilot', 'lsp', 'path', 'snippets', 'buffer' },
-        providers = {
-          copilot = {
-            name = "copilot",
-            module = "blink-cmp-copilot",
-            score_offset = 100,
-            async = true,
-          },
-        },
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
       },
 
       -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance

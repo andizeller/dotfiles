@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Night Owl",
+    "workbench.colorTheme": "Visual Studio Light",
     "vim.vimrc.enable": true,
     "workbench.tree.indent": 20,
     "git.autofetch": true,
@@ -71,4 +71,6 @@
     "C_Cpp.default.intelliSenseMode": "gcc-x86",
     "cmake.configureOnEdit": false,
     "cmake.configureOnOpen": false,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "diffEditor.renderSideBySide": false,
     }
